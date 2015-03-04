@@ -1,0 +1,6 @@
+---
+## PLAYBOOK TO INSTALL AND CONFIGURE IPTABLES ON REDHAT/ DEBIAN SYSTEMS
+
+- hosts: all
+  roles:
+     - iptables

@@ -1,0 +1,25 @@
+---
+# tasks file for iptables
+
+- name: Include OS-specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Flush iptables the first time playbook runs
+  command: iptables -F
+
+- name: Ensure the Firewall is enabled and will start on boot
+  service: name={{ iptables_package }} state=started enabled=yes
+
+- name: Configuring Firewall rules
+  template: src=iptables.j2 dest={{ iptables_path  }} owner=root group=root
+ 
+- name: 
+  service: name={{ iptables_package }} state=restarted
+
+

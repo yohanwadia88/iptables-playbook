@@ -1,0 +1,5 @@
+---
+
+iptables_package: iptables-persistent
+iptables_service: iptables-persistent
+iptables_path: /etc/iptables/rules.v4

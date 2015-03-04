@@ -1,0 +1,5 @@
+---
+
+iptables_package: iptables
+iptables_service: iptables
+iptables_path: /etc/sysconfig/iptables

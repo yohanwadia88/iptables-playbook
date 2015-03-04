@@ -1,0 +1,3 @@
+---
+ - name: Ensure Firewall packages are installed (Debian).
+   apt: "name={{ iptables_package }} state=installed"
