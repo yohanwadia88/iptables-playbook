@@ -17,9 +17,9 @@
   service: name={{ iptables_package }} state=started enabled=yes
 
 - name: Configuring Firewall rules
-  template: src=iptables.j2 dest={{ iptables_path  }} owner=root group=root
+  template: src=iptables.j2 dest={{ iptables_path }} owner=root group=root
  
-- name: 
+- name: Restart Firewall 
   service: name={{ iptables_package }} state=restarted
 
 
